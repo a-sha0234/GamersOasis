@@ -1,5 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+// import { store } from "./redux/store";
+import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
+import { gamesApi } from "./redux/games";
 
 import App from "./App";
 
@@ -8,6 +12,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <ApiProvider api={gamesApi}>
+      <App />
+    </ApiProvider>
   </React.StrictMode>
 );
