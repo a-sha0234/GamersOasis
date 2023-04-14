@@ -1,8 +1,12 @@
+import { BsSearch } from "react-icons/bs";
+
 export default function SearchBar() {
   return (
     <div>
       <input></input>
-      <button></button>
+      <button>
+        <BsSearch />
+      </button>
     </div>
   );
 }
