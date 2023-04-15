@@ -8,8 +8,8 @@ import LinkPanel1 from "../../components/menu1/Menu1";
 import LinkPanel2 from "../../components/menu2/Menu2";
 
 export default function Home() {
-  // const { data } = useGetAllGamesQuery({});
-  // console.log(data);
+  const { data } = useGetAllGamesQuery({});
+  console.log(data);
   return (
     <div className={styles.container}>
       <MainPanel />
