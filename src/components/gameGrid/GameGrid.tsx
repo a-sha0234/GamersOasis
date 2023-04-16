@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 export default function GameGrid() {
   const { data, error, isLoading } = useGetAllGamesQuery({});
-
+  // need to filter data here
   return (
     <div>
       <button>Filter: none</button>
