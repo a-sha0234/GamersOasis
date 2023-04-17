@@ -4,6 +4,7 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 import { gamesApi } from "../redux/games";
 import counterReducer from "../redux/cart";
 import filterReducer from "./filter";
+import wishReducer from "../redux/wishlist";
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
     [gamesApi.reducerPath]: gamesApi.reducer,
     counter: counterReducer,
     filter: filterReducer,
+    wishlist: wishReducer,
   },
   // Adding the api middleware enables caching, invalidation, polling,
   // and other useful features of `rtk-query`.

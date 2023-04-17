@@ -28,15 +28,15 @@ export const filterSlice = createSlice({
     //   state.value += action.payload;
     // },
 
-    Filter: (state, action) => {
+    setFilter: (state, action) => {
       state.value = action.payload;
     },
   },
 });
 
-export const { Filter } = filterSlice.actions;
+export const { setFilter } = filterSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
-// export const selectCount = (state: RootState) => state.counter.value;
+export const selectFilter = (state: RootState) => state.filter.value;
 
 export default filterSlice.reducer;
