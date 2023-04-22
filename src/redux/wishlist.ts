@@ -4,7 +4,7 @@ import type { RootState } from "../redux/store";
 
 // Define a type for the slice state
 interface wishList {
-  value: {}[];
+  value: number[];
 }
 
 // Define the initial state using that type
@@ -30,6 +30,6 @@ export const wishSlice = createSlice({
 export const { addWish, removeWish } = wishSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
-export const selectFilter = (state: RootState) => state.wishlist.value;
+export const selectWishList = (state: RootState) => state.wishlist;
 
 export default wishSlice.reducer;

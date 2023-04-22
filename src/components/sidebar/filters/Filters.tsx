@@ -11,7 +11,7 @@ export default function Filters() {
   return (
     <main>
       <h2>Filters</h2>
-      <button id="wish list" onClick={(e) => filterHelper(e, dispatch)}>
+      <button id="wishlist" onClick={(e) => filterHelper(e, dispatch)}>
         Wish List
       </button>
       <button id="rating" onClick={(e) => filterHelper(e, dispatch)}>

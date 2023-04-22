@@ -3,6 +3,7 @@ import { useGetAllGamesQuery } from "../../redux/games";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectFilter } from "../../redux/filter";
+import { selectWishList } from "../../redux/wishlist";
 
 export default function GameGrid() {
   const { data, error, isLoading } = useGetAllGamesQuery({});
@@ -15,20 +16,51 @@ export default function GameGrid() {
   // if wishlist(redux for wishlist) do something else
   // if filter is anything else  it: rpg than do this
 
-  // const cards = data.map((prev: any) => {
-  //   return <GameCard data={data} />;
-  // });
+  const hello = useSelector(selectWishList);
 
-  const [FilteredData, setFilteredData] = useState();
+  const [FilteredData, setFilteredData] = useState([]);
 
-  console.log(currentFilter);
-
-  if (currentFilter === "rating") {
-    const sortedData = Array.from(data).sort(
-      (a: any, b: any) => Number(a.rating) - Number(b.rating)
-    );
-  } else if (currentFilter == "wishlist") {
-  }
+  useEffect(() => {
+    let filteredArr = data; // hold fetched data
+    if (currentFilter == "rating") {
+      // orders by rating
+      filteredArr = Array.from(filteredArr).sort(
+        (a: any, b: any) => Number(a.rating) + Number(b.rating)
+      );
+      setFilteredData(filteredArr);
+    } else if (currentFilter == "wishlist") {
+      // filter by whats in wishlist
+      filteredArr = data.filter((info: any) => hello.value.includes(info.id));
+      console.log(filteredArr);
+      setFilteredData(filteredArr);
+    } else if (currentFilter == "action") {
+      filteredArr = data.filter((info: any) => info.genre == "action");
+      setFilteredData(filteredArr);
+    } else if (currentFilter == "stratagy") {
+      filteredArr = data.filter((info: any) => info.genre == "stratagy");
+      setFilteredData(filteredArr);
+    } else if (currentFilter == "rpg") {
+      filteredArr = data.filter((info: any) => info.genre == "rpg");
+      setFilteredData(filteredArr);
+    } else if (currentFilter == "Shooter") {
+      filteredArr = data.filter((info: any) => info.genre == "Shooter");
+      setFilteredData(filteredArr);
+    } else if (currentFilter == "adventure") {
+      filteredArr = data.filter((info: any) => info.genre == "adventure");
+      setFilteredData(filteredArr);
+    } else if (currentFilter == "puzzle") {
+      filteredArr = data.filter((info: any) => info.genre == "puzzle");
+      setFilteredData(filteredArr);
+    } else if (currentFilter == "racing") {
+      filteredArr = data.filter((info: any) => info.genre == "puzzle");
+      setFilteredData(filteredArr);
+    } else if (currentFilter == "sports") {
+      filteredArr = data.filter((info: any) => info.genre == "puzzle");
+      setFilteredData(filteredArr);
+    } else {
+      setFilteredData(filteredArr);
+    }
+  }, [data, currentFilter]);
 
   // ================================================
 
@@ -40,8 +72,8 @@ export default function GameGrid() {
       <button>grid</button>
       <button>Column</button>
       {/* {FilterData()} */}
-      {data &&
-        data.map((data: any) => {
+      {FilteredData &&
+        FilteredData.map((data: any) => {
           return <GameCard data={data} />;
         })}
     </div>
