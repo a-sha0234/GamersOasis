@@ -4,19 +4,16 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectFilter } from "../../redux/filter";
 import { selectWishList } from "../../redux/wishlist";
+import { selectSearchQuery } from "../../redux/searchbar";
 
 export default function GameGrid() {
   const { data, error, isLoading } = useGetAllGamesQuery({});
   const currentFilter = useSelector(selectFilter);
 
   // ================================================
-  // need to filter data here
-
-  // if filter is rating reorder array
-  // if wishlist(redux for wishlist) do something else
-  // if filter is anything else  it: rpg than do this
 
   const hello = useSelector(selectWishList);
+  const searchBar = useSelector(selectSearchQuery);
 
   const [FilteredData, setFilteredData] = useState([]);
 
@@ -60,14 +57,21 @@ export default function GameGrid() {
     } else {
       setFilteredData(filteredArr);
     }
-  }, [data, currentFilter]);
+
+    if (searchBar) {
+      filteredArr = data.filter((info: any) =>
+        info.title.toLowerCase().includes(searchBar.toLowerCase())
+      );
+      setFilteredData(filteredArr);
+    }
+  }, [data, currentFilter, hello, searchBar]);
 
   // ================================================
 
   return (
     <div>
-      <button>Filter: none</button>
-      <button>Filter by ...</button>
+      <button>Filter by ..s</button>
+      <button>Clear Filter</button>
       <p>Display options:</p>
       <button>grid</button>
       <button>Column</button>
