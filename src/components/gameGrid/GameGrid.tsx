@@ -2,14 +2,14 @@ import GameCard from "../common/gameCard/GameCard";
 import { useGetAllGamesQuery } from "../../redux/games";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectFilter } from "../../redux/filter";
+import { selectFilter, clearFilter } from "../../redux/filter";
 import { selectWishList } from "../../redux/wishlist";
 import { selectSearchQuery } from "../../redux/searchbar";
 
 export default function GameGrid() {
   const { data, error, isLoading } = useGetAllGamesQuery({});
   const currentFilter = useSelector(selectFilter);
-
+  const dispatch = useDispatch();
   // ================================================
 
   const hello = useSelector(selectWishList);
@@ -49,10 +49,10 @@ export default function GameGrid() {
       filteredArr = data.filter((info: any) => info.genre == "puzzle");
       setFilteredData(filteredArr);
     } else if (currentFilter == "racing") {
-      filteredArr = data.filter((info: any) => info.genre == "puzzle");
+      filteredArr = data.filter((info: any) => info.genre == "racing");
       setFilteredData(filteredArr);
     } else if (currentFilter == "sports") {
-      filteredArr = data.filter((info: any) => info.genre == "puzzle");
+      filteredArr = data.filter((info: any) => info.genre == "sports");
       setFilteredData(filteredArr);
     } else {
       setFilteredData(filteredArr);
@@ -68,14 +68,18 @@ export default function GameGrid() {
 
   // ================================================
 
+  function clearfilter() {
+    dispatch(clearFilter());
+  }
+
   return (
     <div>
       <button>Filter by ..s</button>
-      <button>Clear Filter</button>
+      <button onClick={clearfilter}>Clear Filter</button>
       <p>Display options:</p>
       <button>grid</button>
       <button>Column</button>
-      {/* {FilterData()} */}
+
       {FilteredData &&
         FilteredData.map((data: any) => {
           return <GameCard data={data} />;

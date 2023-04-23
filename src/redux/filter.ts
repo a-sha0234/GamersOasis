@@ -31,10 +31,14 @@ export const filterSlice = createSlice({
     setFilter: (state, action) => {
       state.value = action.payload;
     },
+
+    clearFilter: (state) => {
+      state.value = "";
+    },
   },
 });
 
-export const { setFilter } = filterSlice.actions;
+export const { setFilter, clearFilter } = filterSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectFilter = (state: RootState) => state.filter.value;
