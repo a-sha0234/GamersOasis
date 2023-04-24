@@ -26,13 +26,6 @@ export default function GamePage() {
   // console.log(images[0].image_url);
   // console.log(images[0].image_url);
   return (
-    // <div>
-    //   {loadingImages == false && (
-    //     <img
-    //       src={`https://res.cloudinary.com/dzvgw21mp/image/upload/w_500/${images[0].image_url}.jpg`}
-    //     />
-    //   )}
-    // </div>
     <div>
       {loadingImages === false && <img src={``} alt="Your image description" />}
     </div>
