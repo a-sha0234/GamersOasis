@@ -74,7 +74,7 @@ export default function GameGrid() {
 
   return (
     <div>
-      <button>Filter by ..s</button>
+      <button>Filter by: {currentFilter}</button>
       <button onClick={clearfilter}>Clear Filter</button>
       <p>Display options:</p>
       <button>grid</button>
