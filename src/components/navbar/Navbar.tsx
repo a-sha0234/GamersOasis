@@ -1,8 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
 import SearchBar from "../searchBar/SearchBar";
 import { useEffect, useState } from "react";
+import { handleSideBar } from "../../redux/cartSidebar";
+import { useDispatch } from "react-redux";
 
 export default function Navbar() {
+  const dispatch = useDispatch();
   const location = useLocation();
   const [searchBar, setSearchBar] = useState<boolean>(false);
 
@@ -15,6 +18,10 @@ export default function Navbar() {
       setSearchBar(true);
     }
   }, [location]);
+
+  function sideBar() {
+    dispatch(handleSideBar());
+  }
 
   return (
     <nav>
@@ -31,7 +38,7 @@ export default function Navbar() {
           </li>
         )}
         <li>
-          <button>Cart</button>
+          <button onClick={sideBar}>Cart</button>
         </li>
       </ul>
     </nav>

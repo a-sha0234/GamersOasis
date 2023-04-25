@@ -6,6 +6,8 @@ export default function Menu2() {
       <button>Technolgies</button>
       <button>Commit Log</button>
       <button>Sources</button>
+      <button>Front-End </button>
+      <button>Back-End </button>
     </div>
   );
 }

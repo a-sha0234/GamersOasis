@@ -3,6 +3,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addWish, removeWish, selectWishList } from "../../../redux/wishlist";
+import { addCart, selectCart } from "../../../redux/cart";
 
 interface Props {
   data: any;
@@ -12,8 +13,8 @@ const GameCard: React.FC<Props> = ({ data }) => {
   const dispatch = useDispatch();
   const [wishlist, setWishList] = useState(false);
 
-  const hello = useSelector(selectWishList);
-
+  // const hello = useSelector(selectWishList);
+  let o = useSelector(selectCart);
   function wishlistChange(e: any) {
     setWishList((prev) => !prev);
   }
@@ -26,12 +27,18 @@ const GameCard: React.FC<Props> = ({ data }) => {
     }
   }, [wishlist]);
 
+  function addToCart() {
+    dispatch(addCart(data));
+    // dispatch(addCart(data));
+    console.log(o);
+  }
+
   return (
     <div className={data.id}>
       <a href={`/store/${data.id}`}>
         <img />
       </a>
-      <button>Add to cart +</button>
+      <button onClick={addToCart}>Add to cart +</button>
       <button onClick={wishlistChange}>
         <AiFillHeart color={wishlist == false ? "black" : "red"} />
       </button>

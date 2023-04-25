@@ -2,19 +2,21 @@ import { configureStore } from "@reduxjs/toolkit";
 // Or from '@reduxjs/toolkit/query/react'
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { gamesApi } from "../redux/games";
-import counterReducer from "../redux/cart";
+import cartReducer from "../redux/cart";
 import filterReducer from "./filter";
 import wishReducer from "../redux/wishlist";
 import searchReducer from "../redux/searchbar";
+import sidebarReducer from "../redux/cartSidebar";
 
 export const store = configureStore({
   reducer: {
     // Add the generated reducer as a specific top-level slice
     [gamesApi.reducerPath]: gamesApi.reducer,
-    counter: counterReducer,
+    cart: cartReducer,
     filter: filterReducer,
     wishlist: wishReducer,
     search: searchReducer,
+    sidebar: sidebarReducer,
   },
   // Adding the api middleware enables caching, invalidation, polling,
   // and other useful features of `rtk-query`.
