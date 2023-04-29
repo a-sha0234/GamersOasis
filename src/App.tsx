@@ -4,8 +4,13 @@ import { BrowserRouter, Route, Routes, useParams } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Store from "./pages/store/Store";
 import GamePage from "./pages/gamePage/GamePage";
+import CartSidebar from "./components/cartSidebar/CartSidebar";
+import { useSelector } from "react-redux";
+import { selectSidebar } from "../src/redux/cartSidebar";
 
 function App() {
+  const isSidebar = useSelector(selectSidebar);
+
   return (
     <div className="App">
       {" "}
@@ -17,6 +22,7 @@ function App() {
           <Route path="/store/:id" element={<GamePage />}></Route>
         </Routes>
       </BrowserRouter>
+      {isSidebar && <CartSidebar />}
     </div>
   );
 }
