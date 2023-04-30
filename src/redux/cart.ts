@@ -2,15 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../redux/store";
 
-// interface CartState {
-//   value: {}[];
-// }
-
-// const initialState: CartState = {
-//   value: [],
-// };
-
 type CartItem = {
+  id: any;
   title: string;
   quantity: number;
 };
@@ -40,7 +33,26 @@ export const cartSlice = createSlice({
       }
     },
 
-    removeCart: (state, action) => {},
+    removeCart: (state, action) => {
+      const id = Number(action.payload);
+
+      // Find the index of the item to be removed
+      const itemIndex = state.value.findIndex((item) => item.id === id);
+
+      if (itemIndex !== -1) {
+        const updatedCart = [...state.value];
+
+        if (updatedCart[itemIndex].quantity > 1) {
+          // Decrease quantity of item if it is greater than 1
+          updatedCart[itemIndex].quantity--;
+        } else {
+          // Remove the item from the cart if its quantity is 1
+          updatedCart.splice(itemIndex, 1);
+        }
+
+        state.value = updatedCart;
+      }
+    },
     clearCart: (state, action) => {
       state.value = [];
     },

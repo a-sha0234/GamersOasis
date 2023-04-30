@@ -13,7 +13,7 @@ export default function CartSidebar() {
 
   return (
     <div>
-      <h2>number of items..</h2>
+      <h2>{Cart.length} games</h2>
       <button onClick={clear}>Clear</button>
       <article>
         {Cart.map((data: any) => {
