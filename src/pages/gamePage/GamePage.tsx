@@ -37,14 +37,15 @@ export default function GamePage() {
   }
 
   function addToCart() {
-    dispatch(addCart(game));
+    dispatch(addCart(game[0]));
   }
 
   return (
     <div>
-      {/* {loadingImages === false && <img src={`${images[0].image_url}`} />} */}
       <div>
-        <button onClick={addToCart}>Add to cart +</button>
+        {loadingGame == false && (
+          <button onClick={addToCart}>Add to cart +</button>
+        )}
       </div>
       {loadingImages === false && <Carousel data={images} />}
       <article>
