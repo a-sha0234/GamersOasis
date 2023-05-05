@@ -7,6 +7,7 @@ import GamePage from "./pages/gamePage/GamePage";
 import CartSidebar from "./components/cartSidebar/CartSidebar";
 import { useSelector } from "react-redux";
 import { selectSidebar } from "../src/redux/cartSidebar";
+import "../src/style/global.css";
 
 function App() {
   const isSidebar = useSelector(selectSidebar);

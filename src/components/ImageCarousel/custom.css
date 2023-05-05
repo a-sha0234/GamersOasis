@@ -1,0 +1,7 @@
+.image-gallery-thumbnails li button:before {
+  background-color: red;
+}
+
+.image-gallery-thumbnails li.active button:before {
+  background-color: blue;
+}
