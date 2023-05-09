@@ -1,3 +1,69 @@
+/* .navbar {
+  display: flex;
+  background-color: orange;
+  justify-content: space-between;
+  padding: 1%;
+}
+
+.left {
+  margin-left: 5%;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.right {
+  margin-right: 5%;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.cart {
+  border: none;
+  background-color: orange;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+} */
+
+/* try again  */
+
 .navbar {
   display: flex;
+  /* justify-content: space-between; */
+  padding: 1%;
+}
+
+.left {
+  display: flex;
+  width: 60%;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.left > li {
+  margin-right: 8%;
+}
+
+.right {
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  width: 40%;
+}
+.right > li {
+  margin-left: 10%;
+}
+
+.cart {
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar {
+    background-color: aqua;
+  }
 }

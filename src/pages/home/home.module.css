@@ -1,8 +1,20 @@
-/* .container {
-  background-image: url("../../../public/images//home.gif");
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin: 0;
-  padding: 0;
-} */
+.container {
+  background-color: red;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "mainpanel linkpanel1" "linkpanel2 linkpanel2";
+  height: 100%;
+}
+
+.mainpanel {
+  grid-area: "mainpanel";
+}
+
+.linkpanel1 {
+  grid-area: "linkpanel1";
+}
+
+.linkpanel2 {
+  grid-area: "linkpanel2";
+}

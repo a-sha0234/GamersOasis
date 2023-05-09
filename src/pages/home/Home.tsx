@@ -8,13 +8,17 @@ import LinkPanel1 from "../../components/menu1/Menu1";
 import LinkPanel2 from "../../components/menu2/Menu2";
 
 export default function Home() {
-  const { data } = useGetAllGamesQuery({});
-  console.log(data);
   return (
-    <div className={styles.container}>
-      <MainPanel />
-      <LinkPanel1 />
-      <LinkPanel2 />
-    </div>
+    <main className={styles.container}>
+      <article className="mainpanel">
+        <MainPanel />
+      </article>
+      <article className="linkpanel">
+        <LinkPanel1 />
+      </article>
+      <article className="linkpanel2">
+        <LinkPanel2 />
+      </article>
+    </main>
   );
 }

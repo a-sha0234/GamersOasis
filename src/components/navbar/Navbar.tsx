@@ -7,7 +7,9 @@ import styles from "./navbar.module.css";
 import { useSelector } from "react-redux";
 import { selectCart } from "../../redux/cart";
 import { FiGithub } from "react-icons/fi";
-import { BsCart2 } from "react-icons/bs";
+import { BsBag } from "react-icons/bs";
+import { BsController, BsCart3 } from "react-icons/bs";
+import styled from "styled-components";
 
 export default function Navbar() {
   const dispatch = useDispatch();
@@ -39,31 +41,40 @@ export default function Navbar() {
   return (
     <nav>
       <ul className={styles.navbar}>
-        {gameStore && (
-          <Link to="/">
-            <li>Game Store</li>
-          </Link>
-        )}
-        <Link to="/store">
-          <li>Browse Store</li>
-        </Link>
-        {searchBar && (
-          <li>
-            <SearchBar />
+        <div className={styles.left}>
+          <li className={styles.gameStore}>
+            {gameStore && (
+              <Link to="/">
+                <BsController />
+                Game Store
+              </Link>
+            )}
           </li>
-        )}
-        <li>
-          <a href="#">
-            <FiGithub />
-            a-sha0234
-          </a>
-        </li>
-        <li>
-          <button onClick={sideBar}>
-            <BsCart2 />
-            {`Cart ${useSelector(selectCart).length}`}
-          </button>
-        </li>
+          <li className={styles.browseStore}>
+            {!gameStore && (
+              <Link to="/store">
+                {" "}
+                <BsCart3 /> Browse Store
+              </Link>
+            )}
+          </li>
+          <li className={styles.SearchBar}>{searchBar && <SearchBar />}</li>
+        </div>
+        <div className={styles.right}>
+          {" "}
+          <li>
+            <a href="#" className={styles.githubLink}>
+              <FiGithub />
+              a-sha0234
+            </a>
+          </li>{" "}
+          <li>
+            <button onClick={sideBar} className={styles.cart}>
+              <BsBag />
+              {`Cart ${useSelector(selectCart).length}`}
+            </button>
+          </li>
+        </div>
       </ul>
     </nav>
   );
