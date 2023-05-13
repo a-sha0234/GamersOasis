@@ -62,8 +62,8 @@ export default function Navbar() {
         </div>
         <div className={styles.right}>
           {" "}
-          <li>
-            <a href="#" className={styles.githubLink}>
+          <li className={styles.githubLink}>
+            <a href="#">
               <FiGithub />
               a-sha0234
             </a>

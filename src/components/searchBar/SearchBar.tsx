@@ -3,6 +3,17 @@ import { useState } from "react";
 import { searchQuery, selectSearchQuery } from "../../redux/searchbar";
 import { useSelector, useDispatch } from "react-redux";
 import styles from "./searchbar.module.css";
+import styled from "styled-components";
+
+const Searchbar = styled.input`
+  font-size: 1.2rem;
+  padding: 5px;
+  width: 190%;
+
+  @media screen and (max-width: 779px) {
+    width: 100%;
+  }
+`;
 
 export default function SearchBar() {
   const searchQueryValue = useSelector(selectSearchQuery);
@@ -12,20 +23,16 @@ export default function SearchBar() {
     dispatch(searchQuery(e.target.value));
   }
 
-  // console.log(searchQueryValue.value);
-
   return (
     <>
-      <input
+      <Searchbar
         type="text"
-        placeholder="search"
+        placeholder="search games..."
         value={searchQueryValue}
         onChange={handleSearch}
-        className={styles.searchbar}
-      ></input>
-      <span>
-        <BsSearch />
-      </span>
+        // className={styles.searchbar}
+        // size={50}
+      />
     </>
   );
 }

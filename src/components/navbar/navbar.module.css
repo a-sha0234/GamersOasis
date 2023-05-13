@@ -62,8 +62,15 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 883px) {
   .navbar {
     background-color: aqua;
+  }
+
+  .githubLink {
+    display: none;
+  }
+  .gameStore {
+    display: none;
   }
 }
