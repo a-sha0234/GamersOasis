@@ -1,17 +1,28 @@
-import styles from "../menu2/menu2.module.css";
+import styled from "styled-components";
+import { Button } from "../../style/style";
+
+const SContainer = styled.main`
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+`;
+
+const Scomponent = styled.div`
+  background-color: blue;
+`;
 
 export default function Menu2() {
   return (
-    <main className={styles.container}>
+    <Scomponent>
       <h2>Quick Navigation</h2>
-      <div className={styles.links}>
-        <button>Performance</button>
-        <button>Technolgies</button>
-        <button>Commit Log</button>
-        <button>Sources</button>
-        <button>Front-End </button>
-        <button>Back-End </button>
-      </div>
-    </main>
+      <SContainer>
+        <Button>Performance</Button>
+        <Button>Technolgies</Button>
+        <Button>Commit Log</Button>
+        <Button>Sources</Button>
+        <Button>Front-End </Button>
+        <Button>Back-End </Button>
+      </SContainer>
+    </Scomponent>
   );
 }
