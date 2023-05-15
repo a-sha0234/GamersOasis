@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   margin: 3%;
-  background-color: red;
+  background-color: rgba(255, 255, 255, 0.5);
   padding: 5%;
 `;
 

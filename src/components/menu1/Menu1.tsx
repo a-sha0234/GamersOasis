@@ -3,7 +3,9 @@ import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
-  background-color: red;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 3%;
+  justify-content: center;
 `;
 
 export default function Menu1() {

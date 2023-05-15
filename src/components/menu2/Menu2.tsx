@@ -5,16 +5,21 @@ const SContainer = styled.main`
   display: flex;
   flex-direction: column;
   z-index: 1;
+  padding: 10%;
 `;
 
 const Scomponent = styled.div`
-  background-color: blue;
+  background-color: rgba(255, 255, 255, 0.5);
+`;
+
+const Sheading = styled.h1`
+  text-align: center;
 `;
 
 export default function Menu2() {
   return (
     <Scomponent>
-      <h2>Quick Navigation</h2>
+      <Sheading>Quick Navigation</Sheading>
       <SContainer>
         <Button>Performance</Button>
         <Button>Technolgies</Button>
