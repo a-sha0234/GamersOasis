@@ -56,14 +56,14 @@
   margin-left: 10%;
 }
 
-.cart {
+/* .Cart {
   font-size: 1.2rem;
   font-weight: bold;
   border: none;
   cursor: pointer;
   background: none;
   color: white;
-}
+} */
 
 @media screen and (max-width: 883px) {
   .navbar {

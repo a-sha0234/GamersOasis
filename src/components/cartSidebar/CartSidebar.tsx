@@ -1,17 +1,22 @@
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart, removeCart, selectCart } from "../../redux/cart";
+import { useEffect, useState } from "react";
 import CartItem from "../common/cartItem/CartItem";
 import styles from "./cartSidebar.module.css";
+import { selectSidebar, closeSideBar } from "../../redux/cartSidebar";
+
 export default function CartSidebar() {
   const dispatch = useDispatch();
   const Cart = useSelector(selectCart);
+  const cartModal = useSelector(selectSidebar);
   function clear() {
     dispatch(clearCart({}));
   }
 
-  // console.log(useSelector(selectCart));
+  // console.log(cartModal);
 
   function SumGames() {
+    // total cose of all games in cart
     let total = 0;
     for (let i = 0; i < Cart.length; i++) {
       // if quanity over 1, get quantity and multiply by amount and add to total
@@ -24,7 +29,26 @@ export default function CartSidebar() {
 
     return total.toFixed(2);
   }
-  // console.log(SumGames());
+
+  useEffect(() => {
+    const handleClickOutside = (event: any) => {
+      console.log(cartModal);
+      if (cartModal && !event.target.closest("." + styles.cart)) {
+        console.log(event.target.classList.value);
+        if (!event.target.classList.contains("Cart")) {
+          // Clicked outside the modal, close it
+          console.log("clicked outside");
+          dispatch(closeSideBar());
+        }
+      }
+    };
+
+    window.addEventListener("click", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, [cartModal]);
 
   return (
     <main className={styles.cart}>

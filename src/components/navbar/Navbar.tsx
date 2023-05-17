@@ -69,7 +69,7 @@ export default function Navbar() {
             </a>
           </li>{" "}
           <li>
-            <button onClick={sideBar} className={styles.cart}>
+            <button onClick={sideBar} className="Cart">
               <BsBag />
               {`Cart ${useSelector(selectCart).length}`}
             </button>

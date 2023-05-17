@@ -18,12 +18,16 @@ export const SidebarSlice = createSlice({
   initialState,
   reducers: {
     handleSideBar: (state) => {
-      state.value = !state.value;
+      // state.value = !state.value;
+      state.value = true;
+    },
+    closeSideBar: (state) => {
+      state.value = false;
     },
   },
 });
 
-export const { handleSideBar } = SidebarSlice.actions;
+export const { handleSideBar, closeSideBar } = SidebarSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectSidebar = (state: RootState) => state.sidebar.value;
