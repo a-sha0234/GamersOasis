@@ -26,7 +26,7 @@
   margin-right: 10%;
   margin-top: 8%;
   /* width: 100%; */
-  width: 30%;
+  width: 40%;
 }
 
 .nav {
@@ -34,8 +34,15 @@
   z-index: 1;
 }
 
+@media only screen and (max-width: 1200px) {
+  .menu2 {
+    margin: auto;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .container {
     flex-direction: column;
+    margin-top: 3%;
   }
 }

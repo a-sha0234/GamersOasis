@@ -43,7 +43,7 @@ export default function GameGrid() {
       filteredArr = data.filter((info: any) => info.genre == "Shooter");
       setFilteredData(filteredArr);
     } else if (currentFilter == "adventure") {
-      filteredArr = data.filter((info: any) => info.genre == "adventure");
+      filteredArr = data.filter((info: any) => info.genre == "Adventure");
       setFilteredData(filteredArr);
     } else if (currentFilter == "puzzle") {
       filteredArr = data.filter((info: any) => info.genre == "puzzle");

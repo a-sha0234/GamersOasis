@@ -4,6 +4,19 @@ import { useEffect, useState } from "react";
 import CartItem from "../common/cartItem/CartItem";
 import styles from "./cartSidebar.module.css";
 import { selectSidebar, closeSideBar } from "../../redux/cartSidebar";
+import styled from "styled-components";
+
+const SContainer1 = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+`;
+
+const Scontainer2 = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 3%;
+`;
 
 export default function CartSidebar() {
   const dispatch = useDispatch();
@@ -52,17 +65,23 @@ export default function CartSidebar() {
 
   return (
     <main className={styles.cart}>
-      <h2>{Cart.length} games</h2>
-      <button onClick={clear}>Clear</button>
-      <article>
+      <Scontainer2>
+        <h2>{Cart.length} games</h2>
+        <button onClick={clear}>Clear</button>
+      </Scontainer2>
+      <article className={styles.games}>
         {Cart.map((data: any) => {
           return <CartItem data={data} />;
         })}
       </article>
-      <article>
-        <p>Total: £ {SumGames()}</p>
-        <button>Checkout *arrowimage</button>
-      </article>
+      <SContainer1>
+        <article className={styles.sidebar__bottom}>
+          <p className={styles.total}>Total: £ {SumGames()}</p>
+          <button className={styles.sidebar__checkout}>
+            Checkout *arrowimage
+          </button>
+        </article>
+      </SContainer1>
     </main>
   );
 }

@@ -6,6 +6,10 @@ const SContainer = styled.main`
   flex-direction: column;
   z-index: 1;
   padding: 10%;
+
+  @media only screen and (max-width: 600px) {
+    justify-content: center;
+  }
 `;
 
 const Scomponent = styled.div`
