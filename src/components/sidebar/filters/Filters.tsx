@@ -1,6 +1,18 @@
 import { useSelector, useDispatch } from "react-redux";
 import { setFilter, selectFilter } from "../../../redux/filter";
 import { filterHelper } from "../../../util/filter/filter";
+import { SlPresent } from "react-icons/sl";
+import { AiFillStar } from "react-icons/ai";
+import styled from "styled-components";
+import { SFilter, Sicon, SfilterHeading } from "../../../style/style";
+
+const Scomponent = styled.main``;
+
+const Scontainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+`;
 
 export default function Filters() {
   const dispatch = useDispatch();
@@ -9,14 +21,24 @@ export default function Filters() {
 
   // console.log(currentFilter);
   return (
-    <main>
-      <h2>Filters</h2>
-      <button id="wishlist" onClick={(e) => filterHelper(e, dispatch)}>
-        Wish List
-      </button>
-      <button id="rating" onClick={(e) => filterHelper(e, dispatch)}>
-        Rating
-      </button>
-    </main>
+    <Scomponent>
+      <Scontainer>
+        <SfilterHeading>Filters</SfilterHeading>
+        <SFilter id="wishlist" onClick={(e) => filterHelper(e, dispatch)}>
+          <Sicon>
+            {" "}
+            <SlPresent color="white" />
+          </Sicon>
+          Wish List
+        </SFilter>
+        <SFilter id="rating" onClick={(e) => filterHelper(e, dispatch)}>
+          <Sicon>
+            {" "}
+            <AiFillStar color="white" />
+          </Sicon>{" "}
+          Rating
+        </SFilter>
+      </Scontainer>
+    </Scomponent>
   );
 }

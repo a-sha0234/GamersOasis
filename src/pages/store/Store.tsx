@@ -8,11 +8,17 @@ import Navbar from "../../components/navbar/Navbar";
 
 export default function Store() {
   return (
-    <main className={styles.container}>
+    <main>
       <Navbar />
-      <h1>Trending</h1>
-      <Sidebar />
-      <GameGrid />
+      <div className={styles.container}>
+        {/* <h1>Trending</h1> */}
+        <article className={styles.sidebar}>
+          <Sidebar />
+        </article>
+        <article className={styles.gameGrid}>
+          <GameGrid />
+        </article>
+      </div>
     </main>
   );
 }
