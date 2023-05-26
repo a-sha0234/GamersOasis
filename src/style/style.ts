@@ -10,7 +10,7 @@ const SFilter = styled.button`
   border: none;
   font-size: 1.3rem;
   margin: 2%;
-  padding: 4%;
+  padding: 2%;
   cursor: pointer;
   display: flex;
 `;
@@ -22,7 +22,9 @@ const Sicon = styled.span`
   padding: 2%;
 `;
 
-const Sheading = styled.h1``;
+const Sheading = styled.h1`
+  font-size: 4rem;
+`;
 
 const SfilterHeading = styled.h2`
   margin: 2%;

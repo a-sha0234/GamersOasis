@@ -5,6 +5,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectFilter, clearFilter } from "../../redux/filter";
 import { selectWishList } from "../../redux/wishlist";
 import { selectSearchQuery } from "../../redux/searchbar";
+import { Sheading } from "../../style/style";
+import styles from "./gamegrid.module.css";
+import { BsGrid3X2 } from "react-icons/bs";
+import { MdOutlineTableRows } from "react-icons/md";
 
 export default function GameGrid() {
   const { data, error, isLoading } = useGetAllGamesQuery({});
@@ -73,17 +77,35 @@ export default function GameGrid() {
   }
 
   return (
-    <div>
-      <button>Filter by: {currentFilter}</button>
-      <button onClick={clearfilter}>Clear Filter</button>
-      <p>Display options:</p>
-      <button>grid</button>
-      <button>Column</button>
-
-      {FilteredData &&
-        FilteredData.map((data: any) => {
-          return <GameCard data={data} />;
-        })}
-    </div>
+    <main>
+      <Sheading>Trending and Intresting </Sheading>
+      <p>Based on player count</p>
+      <div className={styles.display}>
+        <article>
+          <button>Filter by: {currentFilter}</button>
+          <button onClick={clearfilter}>Clear Filter</button>
+        </article>
+        <article className={styles.display__options}>
+          <p>Display options:</p>
+          <button>
+            <BsGrid3X2 />
+            {/* grid */}
+          </button>
+          <button>
+            <MdOutlineTableRows />
+          </button>
+        </article>
+      </div>
+      <div className={styles.container}>
+        {FilteredData &&
+          FilteredData.map((data: any) => {
+            return (
+              <div>
+                <GameCard data={data} />
+              </div>
+            );
+          })}
+      </div>
+    </main>
   );
 }

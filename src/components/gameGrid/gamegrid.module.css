@@ -1,0 +1,24 @@
+.display {
+  display: flex;
+  justify-content: space-between;
+  margin: 3%;
+}
+
+.display p {
+  display: inline;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 800px) {
+  .display__options {
+    display: none;
+  }
+  .container {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
