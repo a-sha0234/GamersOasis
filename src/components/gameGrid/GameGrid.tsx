@@ -20,6 +20,7 @@ export default function GameGrid() {
   const searchBar = useSelector(selectSearchQuery);
 
   const [FilteredData, setFilteredData] = useState([]);
+  const [display, setDisplay] = useState<string>("grid");
 
   useEffect(() => {
     let filteredArr = data; // hold fetched data
@@ -76,6 +77,13 @@ export default function GameGrid() {
     dispatch(clearFilter());
   }
 
+  function displayGrid() {
+    setDisplay("grid");
+  }
+  function displayColumn() {
+    setDisplay("column");
+  }
+
   return (
     <main>
       <Sheading>Trending and Intresting </Sheading>
@@ -87,20 +95,24 @@ export default function GameGrid() {
         </article>
         <article className={styles.display__options}>
           <p>Display options:</p>
-          <button>
+          <button onClick={displayGrid}>
             <BsGrid3X2 />
             {/* grid */}
           </button>
-          <button>
+          <button onClick={displayColumn}>
             <MdOutlineTableRows />
           </button>
         </article>
       </div>
-      <div className={styles.container}>
+      <div
+        className={
+          display == "grid" ? styles.container__grid : styles.container__column
+        }
+      >
         {FilteredData &&
           FilteredData.map((data: any) => {
             return (
-              <div>
+              <div className={styles.container__card}>
                 <GameCard data={data} />
               </div>
             );

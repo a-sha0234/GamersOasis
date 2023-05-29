@@ -8,16 +8,36 @@
   display: inline;
 }
 
-.container {
+/* .container {
   display: flex;
   flex-wrap: wrap;
+} */
+
+.container__grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container__column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container__card {
+  margin: 3%;
 }
 
 @media only screen and (max-width: 800px) {
   .display__options {
     display: none;
   }
-  .container {
+  .container__grid {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .container__column {
     flex-direction: column;
     justify-content: center;
   }

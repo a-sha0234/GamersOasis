@@ -4,10 +4,24 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addWish, removeWish, selectWishList } from "../../../redux/wishlist";
 import { addCart, selectCart } from "../../../redux/cart";
+import Carousel from "../../ImageCarousel/Carousel";
+import styles from "./gamecard.module.css";
+import styled from "styled-components";
 
 interface Props {
   data: any;
 }
+interface coverImg {
+  cover: any;
+}
+
+const ScoverImg = styled.div<coverImg>`
+  background-image: url(${(props) => props.cover});
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+  width: 100%;
+`;
 
 const GameCard: React.FC<Props> = ({ data }) => {
   const dispatch = useDispatch();
@@ -17,6 +31,7 @@ const GameCard: React.FC<Props> = ({ data }) => {
   let o = useSelector(selectCart);
   function wishlistChange(e: any) {
     setWishList((prev) => !prev);
+    e.preventDefault();
   }
 
   useEffect(() => {
@@ -27,22 +42,45 @@ const GameCard: React.FC<Props> = ({ data }) => {
     }
   }, [wishlist]);
 
-  function addToCart() {
+  function addToCart(e: any) {
     dispatch(addCart(data));
     // dispatch(addCart(data));
     console.log(o);
+    e.preventDefault();
   }
 
+  console.log(data);
   return (
-    <div className={data.id}>
-      <a href={`/store/${data.id}`}>
-        <img />
+    <div className={styles.card}>
+      <a href={`/store/${data.id}`} className={styles.image}>
+        <div className={data.id}>
+          {/* <img src={data.cover} width={300} height={300} /> */}
+          {/* <img
+            src={data.cover}
+            className={styles.img}
+            // width={300}
+            // height={300}
+          />{" "} */}
+          {/* <article
+            style={{
+              backgroundImage: `url(${data.cover})`,
+              width: "100%",
+              height: "100%",
+            }}
+          ></article> */}
+          <ScoverImg cover={data.cover}></ScoverImg>
+          <article className={styles.card__top}>
+            <button onClick={addToCart}>Add to cart +</button>
+            <p>£{data.price}</p>
+          </article>
+          <p>{data.title}</p>
+          <article className={styles.card__bottom}>
+            <button onClick={wishlistChange}>
+              <AiFillHeart color={wishlist == false ? "black" : "red"} />
+            </button>
+          </article>
+        </div>
       </a>
-      <button onClick={addToCart}>Add to cart +</button>
-      <button onClick={wishlistChange}>
-        <AiFillHeart color={wishlist == false ? "black" : "red"} />
-      </button>
-      <p>{data.rating}</p>
     </div>
   );
 };
