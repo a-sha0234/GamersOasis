@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Shead from "../util/Styledcomponents/interfaces";
 
 const Button = styled.button`
   border: none;
@@ -22,8 +23,8 @@ const Sicon = styled.span`
   padding: 2%;
 `;
 
-const Sheading = styled.h1`
-  font-size: 4rem;
+const Sheading = styled.h1<Shead>`
+  font-size: ${(props) => props.fontSize};
 `;
 
 const SfilterHeading = styled.h2`

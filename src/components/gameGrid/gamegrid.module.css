@@ -1,7 +1,7 @@
 .display {
   display: flex;
   justify-content: space-between;
-  margin: 3%;
+  /* margin: 1%; */
 }
 
 .display p {
@@ -13,9 +13,32 @@
   flex-wrap: wrap;
 } */
 
+/* .container {
+  display: flex;
+  flex-direction: column;
+  background-color: blue;
+} */
+
+.display__options {
+  margin-right: 7.5%;
+}
+
+.display__options > button {
+  margin-right: 5px;
+}
+
+.display__filter {
+  margin-left: 1%;
+}
+
+.display__filter > button {
+  margin-right: 5px;
+}
+
 .container__grid {
   display: flex;
   flex-wrap: wrap;
+  /* justify-content: center; */
 }
 
 .container__column {
@@ -26,7 +49,7 @@
 }
 
 .container__card {
-  margin: 3%;
+  margin: 1%;
 }
 
 @media only screen and (max-width: 800px) {

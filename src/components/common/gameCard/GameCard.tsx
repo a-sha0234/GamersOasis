@@ -73,10 +73,13 @@ const GameCard: React.FC<Props> = ({ data }) => {
             <button onClick={addToCart}>Add to cart +</button>
             <p>£{data.price}</p>
           </article>
-          <p>{data.title}</p>
+          <p className={styles.card__title}>{data.title}</p>
           <article className={styles.card__bottom}>
             <button onClick={wishlistChange}>
-              <AiFillHeart color={wishlist == false ? "black" : "red"} />
+              <AiFillHeart
+                color={wishlist == false ? "black" : "red"}
+                fontSize={25}
+              />
             </button>
           </article>
         </div>

@@ -6,13 +6,8 @@
 .card {
   background-color: #ffa500;
   /* margin-right: 10%; */
-  width: 250px;
+  width: 350px;
 }
-
-/* .img {
-  max-width: 20%;
-  height: auto;
-} */
 
 .card__top {
   display: flex;
@@ -20,10 +15,17 @@
   margin: 3%;
 }
 
+.card__title {
+  margin: 3%;
+}
+
 .card__bottom {
   display: flex;
   justify-content: flex-end;
   margin: 3%;
+}
+
+.card__bottom button {
 }
 
 @media only screen and (max-width: 800px) {

@@ -85,11 +85,11 @@ export default function GameGrid() {
   }
 
   return (
-    <main>
-      <Sheading>Trending and Intresting </Sheading>
+    <main className={styles.container}>
+      <Sheading fontSize={"4rem"}>Trending and Intresting </Sheading>
       <p>Based on player count</p>
       <div className={styles.display}>
-        <article>
+        <article className={styles.display__filter}>
           <button>Filter by: {currentFilter}</button>
           <button onClick={clearfilter}>Clear Filter</button>
         </article>
