@@ -96,11 +96,11 @@ export default function GameGrid() {
         <article className={styles.display__options}>
           <p>Display options:</p>
           <button onClick={displayGrid}>
-            <BsGrid3X2 />
+            <BsGrid3X2 fontSize={40} />
             {/* grid */}
           </button>
           <button onClick={displayColumn}>
-            <MdOutlineTableRows />
+            <MdOutlineTableRows fontSize={40} />
           </button>
         </article>
       </div>

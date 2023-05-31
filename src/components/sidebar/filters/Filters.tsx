@@ -27,14 +27,14 @@ export default function Filters() {
         <SFilter id="wishlist" onClick={(e) => filterHelper(e, dispatch)}>
           <Sicon>
             {" "}
-            <SlPresent color="white" />
+            <SlPresent color="white" fontSize={30} />
           </Sicon>
           Wish List
         </SFilter>
         <SFilter id="rating" onClick={(e) => filterHelper(e, dispatch)}>
           <Sicon>
             {" "}
-            <AiFillStar color="white" />
+            <AiFillStar color="white" fontSize={30} />
           </Sicon>{" "}
           Rating
         </SFilter>

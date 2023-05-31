@@ -42,51 +42,51 @@ export default function Genres() {
         <SfilterHeading>Genres</SfilterHeading>
         <SFilter id="action" onClick={(e) => filterHelper(e, dispatch)}>
           <Sicon>
-            <RiBoxingFill color="white" />
+            <RiBoxingFill color="white" fontSize={30} />
           </Sicon>{" "}
           Action
         </SFilter>
         <SFilter id="stratagy" onClick={(e) => filterHelper(e, dispatch)}>
           <Sicon>
-            <GiChessKnight color="white" />
+            <GiChessKnight color="white" fontSize={30} />
           </Sicon>
           strategy
         </SFilter>
         <SFilter id="rpg" onClick={(e) => filterHelper(e, dispatch)}>
           <Sicon>
-            <GiCrossedSwords color="white" />
+            <GiCrossedSwords color="white" fontSize={30} />
           </Sicon>
           RPG
         </SFilter>
         <SFilter id="Shooter" onClick={(e) => filterHelper(e, dispatch)}>
           <Sicon>
-            <GiPistolGun color="white" />
+            <GiPistolGun color="white" fontSize={30} />
           </Sicon>
           Shooter
         </SFilter>
         <SFilter id="adventure" onClick={(e) => filterHelper(e, dispatch)}>
           <Sicon>
             {" "}
-            <GiMountainRoad color="white" />
+            <GiMountainRoad color="white" fontSize={30} />
           </Sicon>
           Adventure
         </SFilter>
         <SFilter id="puzzle" onClick={(e) => filterHelper(e, dispatch)}>
           <Sicon>
-            <HiPuzzle color="white" />
+            <HiPuzzle color="white" fontSize={30} />
           </Sicon>
           Puzzle
         </SFilter>
         <SFilter id="racing" onClick={(e) => filterHelper(e, dispatch)}>
           <Sicon>
-            <FaFlagCheckered color="white" />
+            <FaFlagCheckered color="white" fontSize={30} />
           </Sicon>
           Racing
         </SFilter>
         <SFilter id="sports" onClick={(e) => filterHelper(e, dispatch)}>
           <Sicon>
             {" "}
-            <BiFootball color="white" />
+            <BiFootball color="white" fontSize={30} />
           </Sicon>
           Sports
         </SFilter>

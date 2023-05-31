@@ -21,6 +21,8 @@
 
 .display__options {
   margin-right: 7.5%;
+  display: flex;
+  align-items: center;
 }
 
 .display__options > button {
@@ -29,10 +31,14 @@
 
 .display__filter {
   margin-left: 1%;
+  display: flex;
+  align-items: center;
 }
 
 .display__filter > button {
   margin-right: 5px;
+  font-size: 0.9rem;
+  padding: 5px;
 }
 
 .container__grid {

@@ -14,10 +14,11 @@ const SFilter = styled.button`
   padding: 2%;
   cursor: pointer;
   display: flex;
+  align-items: center;
 `;
 
 const Sicon = styled.span`
-  background-color: black;
+  background-color: blue;
   border-radius: 20%;
   margin-right: 2%;
   padding: 2%;
