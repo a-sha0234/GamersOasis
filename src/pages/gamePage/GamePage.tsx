@@ -9,6 +9,10 @@ import { addCart } from "../../redux/cart";
 import { useDispatch } from "react-redux";
 import Carousel from "../../components/ImageCarousel/Carousel";
 // import "react-image-gallery/styles/css/image-gallery.css";
+import Navbar from "../../components/navbar/Navbar";
+import { BsArrowLeftShort } from "react-icons/bs";
+import styles from "./gamepage.module.css";
+import { Link } from "react-router-dom";
 
 export default function GamePage() {
   const { id } = useParams();
@@ -42,26 +46,51 @@ export default function GamePage() {
 
   return (
     <div>
-      <div>
+      <Navbar />
+      <div className={styles.gamepage__top}>
+        <button>
+          <BsArrowLeftShort />
+          store
+        </button>
+        <h1>{!loadingGame && <p>{game[0].title}</p>}</h1>
+      </div>
+
+      <div className={styles.gamepage__bottom}>
+        <article className={styles.gamepage__carousel}>
+          {loadingImages === false && <Carousel data={images} />}
+        </article>
+        <article className={styles.gamepage__bottom__about}>
+          <h2>About</h2>
+          {!loadingGame && <p>{game[0].descriptions}</p>}
+
+          {showMore === true && loadingPlatform == false ? (
+            platform.map((data: any) => <p>{data.plaforms}</p>)
+          ) : (
+            <></>
+          )}
+
+          <button onClick={showmore}>
+            {showMore ? "Show Less" : "Show More"}
+          </button>
+
+          {/* <div className={styles.cart}>
+            {loadingGame == false && (
+              <>
+                <p>£{game[0].price}</p>
+                <button onClick={addToCart}>Add to cart +</button>
+              </>
+            )}
+          </div> */}
+        </article>
+      </div>
+      <div className={styles.cart}>
         {loadingGame == false && (
-          <button onClick={addToCart}>Add to cart +</button>
+          <>
+            <p>£{game[0].price}</p>
+            <button onClick={addToCart}>Add to cart +</button>
+          </>
         )}
       </div>
-      {loadingImages === false && <Carousel data={images} />}
-      <article>
-        <h2>About</h2>
-        {!loadingGame && <p>{game[0].descriptions}</p>}
-
-        {showMore === true && loadingPlatform == false ? (
-          platform.map((data: any) => <p>{data.plaforms}</p>)
-        ) : (
-          <></>
-        )}
-
-        <button onClick={showmore}>
-          {showMore ? "Show Less" : "Show More"}
-        </button>
-      </article>
     </div>
   );
 }

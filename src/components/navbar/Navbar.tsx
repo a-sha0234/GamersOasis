@@ -9,7 +9,6 @@ import { selectCart } from "../../redux/cart";
 import { FiGithub } from "react-icons/fi";
 import { BsBag } from "react-icons/bs";
 import { BsController, BsCart3 } from "react-icons/bs";
-import styled from "styled-components";
 
 export default function Navbar() {
   const dispatch = useDispatch();

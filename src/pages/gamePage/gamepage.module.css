@@ -1,0 +1,63 @@
+.gamepage__top {
+  display: flex;
+  justify-content: space-between;
+  margin: 2%;
+}
+
+.gamepage__bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gamepage__bottom__about {
+  max-width: 25%;
+  /* margin-left: 10%; */
+  margin: 3%;
+  background-color: rebeccapurple;
+  padding: 1%;
+}
+
+.gamepage__carousel {
+  margin: 3%;
+  width: 80%;
+}
+
+.cart {
+  background-color: red;
+  display: flex;
+  justify-content: space-between;
+  max-width: 25%;
+  margin-left: 70%;
+  padding: 1%;
+}
+
+.gamepage__top h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+@media only screen and (max-width: 800px) {
+  .gamepage__bottom {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gamepage__carousel {
+    width: 90%;
+  }
+  .gamepage__bottom__about {
+    max-width: 90%;
+  }
+  .cart {
+    margin-left: 0;
+    max-width: 90%;
+    margin: 3%;
+    padding: 2%;
+  }
+
+  .gamepage__top h1 {
+    font-size: 2rem;
+    font-weight: 900;
+  }
+}
