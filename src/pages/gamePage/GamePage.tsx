@@ -64,7 +64,11 @@ export default function GamePage() {
           {!loadingGame && <p>{game[0].descriptions}</p>}
 
           {showMore === true && loadingPlatform == false ? (
-            platform.map((data: any) => <p>{data.plaforms}</p>)
+            platform.map((data: any) => (
+              <div>
+                <span>{data.plaforms}</span>
+              </div>
+            ))
           ) : (
             <></>
           )}
