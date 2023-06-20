@@ -17,6 +17,10 @@
   padding: 1%;
 }
 
+/* .gamepage__bottom__about p {
+  margin-top: 5%;
+} */
+
 .gamepage__carousel {
   margin: 3%;
   width: 80%;
@@ -34,6 +38,26 @@
 .gamepage__top h1 {
   font-size: 3rem;
   font-weight: 900;
+}
+
+.gamepage__bottom__about__showmore {
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+}
+
+.showmore__button {
+  max-width: fit-content;
+  align-self: flex-end;
+}
+
+.store__button {
+  display: flex;
+  align-items: center;
+  padding: 10%;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 800px) {
@@ -59,5 +83,9 @@
   .gamepage__top h1 {
     font-size: 2rem;
     font-weight: 900;
+  }
+
+  .title p {
+    font-size: 1.3rem;
   }
 }

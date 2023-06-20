@@ -14,4 +14,8 @@ context("home page", () => {
   it("get the main header", () => {
     cy.get("h1").should("contain.text", "Game Store");
   });
+
+  it("get the paragraph text", () => {
+    cy.get(".mainpanel").first().find("p").should("exist");
+  });
 });
