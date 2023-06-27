@@ -24,15 +24,23 @@
 
 .sidebar__checkout {
   justify-content: flex-end;
-  align-self: flex-end;
+  align-self: center;
 }
 
-.games {
-  overflow-y: scroll;
+@media only screen and (max-width: 1200px) {
+  .cart {
+    width: 40%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
   .cart {
     width: 60%;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .cart {
+    width: 70%;
   }
 }

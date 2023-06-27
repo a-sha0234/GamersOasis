@@ -54,20 +54,6 @@ const GameCard: React.FC<Props> = ({ data }) => {
     <div className={styles.card}>
       <a href={`/store/${data.id}`} className={styles.image}>
         <div className={data.id}>
-          {/* <img src={data.cover} width={300} height={300} /> */}
-          {/* <img
-            src={data.cover}
-            className={styles.img}
-            // width={300}
-            // height={300}
-          />{" "} */}
-          {/* <article
-            style={{
-              backgroundImage: `url(${data.cover})`,
-              width: "100%",
-              height: "100%",
-            }}
-          ></article> */}
           <ScoverImg cover={data.cover}></ScoverImg>
           <article className={styles.card__top}>
             <button onClick={addToCart}>Add to cart +</button>

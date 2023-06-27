@@ -5,6 +5,7 @@ import CartItem from "../common/cartItem/CartItem";
 import styles from "./cartSidebar.module.css";
 import { selectSidebar, closeSideBar } from "../../redux/cartSidebar";
 import styled from "styled-components";
+import { BsArrowRight } from "react-icons/bs";
 
 const SContainer1 = styled.div`
   position: absolute;
@@ -16,6 +17,11 @@ const Scontainer2 = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 3%;
+`;
+
+const ScartContainser = styled.div`
+  display: flex;
+  justify-content: center;
 `;
 
 export default function CartSidebar() {
@@ -71,14 +77,18 @@ export default function CartSidebar() {
       </Scontainer2>
       <article className={styles.games}>
         {Cart.map((data: any) => {
-          return <CartItem data={data} />;
+          return (
+            <ScartContainser>
+              <CartItem data={data} />
+            </ScartContainser>
+          );
         })}
       </article>
       <SContainer1>
         <article className={styles.sidebar__bottom}>
           <p className={styles.total}>Total: £ {SumGames()}</p>
           <button className={styles.sidebar__checkout}>
-            Checkout *arrowimage
+            Checkout <BsArrowRight />
           </button>
         </article>
       </SContainer1>
