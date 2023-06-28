@@ -1,5 +1,7 @@
 import { Button } from "../../style/style";
 import styled from "styled-components";
+import { Link, useLocation } from "react-router-dom";
+import styles from "./menu1.module.css";
 
 const Container = styled.div`
   display: flex;
@@ -11,10 +13,19 @@ const Container = styled.div`
 export default function Menu1() {
   return (
     <Container>
-      <Button>Browse</Button>
-      <Button>Dice</Button>
-      <Button>Github</Button>
-      <Button>LinkedIn</Button>
+      <Link to="/store" className={styles.link}>
+        Browse
+      </Link>
+      <a href="https://github.com/a-sha0234" className={styles.button}>
+        Github
+      </a>
+      <a
+        href="www.linkedin.com/in/arun-sharma-compsci"
+        className={styles.button}
+      >
+        {" "}
+        LinkedIn
+      </a>
     </Container>
   );
 }

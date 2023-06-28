@@ -15,6 +15,7 @@ import styles from "./gamepage.module.css";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { AiOutlinePlus } from "react-icons/ai";
 
 const Sdescritpion = styled.p`
   margin-top: 5%;
@@ -117,7 +118,9 @@ export default function GamePage() {
         {loadingGame == false && (
           <>
             <p>£{game[0].price}</p>
-            <button onClick={addToCart}>Add to cart +</button>
+            <button onClick={addToCart}>
+              Add to cart <AiOutlinePlus />
+            </button>
           </>
         )}
       </div>

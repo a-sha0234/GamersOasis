@@ -13,7 +13,7 @@ const Heading = styled.h1`
 export default function MainMenu() {
   return (
     <Container>
-      <Heading>Game Store</Heading>
+      <Heading>GamersOasis</Heading>
       <p>
         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
         accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab

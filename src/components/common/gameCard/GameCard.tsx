@@ -7,6 +7,7 @@ import { addCart, selectCart } from "../../../redux/cart";
 import Carousel from "../../ImageCarousel/Carousel";
 import styles from "./gamecard.module.css";
 import styled from "styled-components";
+import { AiOutlinePlus } from "react-icons/ai";
 
 interface Props {
   data: any;
@@ -56,7 +57,9 @@ const GameCard: React.FC<Props> = ({ data }) => {
         <div className={data.id}>
           <ScoverImg cover={data.cover}></ScoverImg>
           <article className={styles.card__top}>
-            <button onClick={addToCart}>Add to cart +</button>
+            <button onClick={addToCart}>
+              Add to cart <AiOutlinePlus />
+            </button>
             <p>£{data.price}</p>
           </article>
           <p className={styles.card__title}>{data.title}</p>

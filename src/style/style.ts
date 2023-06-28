@@ -32,4 +32,11 @@ const SfilterHeading = styled.h2`
   margin: 2%;
 `;
 
-export { Button, SFilter, Sicon, Sheading, SfilterHeading };
+const Slink = styled.a`
+  margin: 2%;
+  padding: 1%;
+  background-color: red;
+  width: 80%;
+  text-align: center;
+`;
+export { Button, SFilter, Sicon, Sheading, SfilterHeading, Slink };
