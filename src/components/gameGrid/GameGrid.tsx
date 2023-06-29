@@ -38,8 +38,8 @@ export default function GameGrid() {
     } else if (currentFilter == "action") {
       filteredArr = data.filter((info: any) => info.genre == "action");
       setFilteredData(filteredArr);
-    } else if (currentFilter == "stratagy") {
-      filteredArr = data.filter((info: any) => info.genre == "stratagy");
+    } else if (currentFilter == "Strategy") {
+      filteredArr = data.filter((info: any) => info.genre == "Strategy");
       setFilteredData(filteredArr);
     } else if (currentFilter == "rpg") {
       filteredArr = data.filter((info: any) => info.genre == "rpg");
@@ -51,13 +51,13 @@ export default function GameGrid() {
       filteredArr = data.filter((info: any) => info.genre == "Adventure");
       setFilteredData(filteredArr);
     } else if (currentFilter == "puzzle") {
-      filteredArr = data.filter((info: any) => info.genre == "puzzle");
+      filteredArr = data.filter((info: any) => info.genre == "Puzzle");
       setFilteredData(filteredArr);
     } else if (currentFilter == "racing") {
-      filteredArr = data.filter((info: any) => info.genre == "racing");
+      filteredArr = data.filter((info: any) => info.genre == "Racing");
       setFilteredData(filteredArr);
     } else if (currentFilter == "sports") {
-      filteredArr = data.filter((info: any) => info.genre == "sports");
+      filteredArr = data.filter((info: any) => info.genre == "Sports");
       setFilteredData(filteredArr);
     } else {
       setFilteredData(filteredArr);

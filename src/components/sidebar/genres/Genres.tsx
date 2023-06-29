@@ -46,7 +46,7 @@ export default function Genres() {
           </Sicon>{" "}
           Action
         </SFilter>
-        <SFilter id="stratagy" onClick={(e) => filterHelper(e, dispatch)}>
+        <SFilter id="Strategy" onClick={(e) => filterHelper(e, dispatch)}>
           <Sicon>
             <GiChessKnight color="white" fontSize={30} />
           </Sicon>

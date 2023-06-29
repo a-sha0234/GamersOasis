@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import styles from "./mainpanel.module.css";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   margin: 3%;
@@ -15,11 +17,13 @@ export default function MainMenu() {
     <Container>
       <Heading>GamersOasis</Heading>
       <p>
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-        illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-        odit aut fu
+        Welcome to GamersOasis, your one-stop destination for all your gaming
+        needs! With a vast collection of games spanning multiple genres and
+        platforms, we have something for every gamer.{" "}
+        <Link to="/store" className={styles.browse}>
+          Browse{" "}
+        </Link>
+        through our store using out seamless UI/UX.
       </p>
     </Container>
   );
