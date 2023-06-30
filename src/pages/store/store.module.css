@@ -1,3 +1,11 @@
+/* .top__container {
+  background-color: rgba(0, 0, 0, 0.311);
+} */
+
+body {
+  background-color: #111111;
+}
+
 .container {
   display: grid;
   grid-template-columns: 1fr 4fr;
@@ -8,12 +16,12 @@
 
 .sidebar {
   grid-area: sidebar;
-  background-color: olive;
+  background-color: #111111;
 }
 
 .gameGrid {
   grid-area: gamegrid;
-  background-color: aquamarine;
+  background-color: #111111;
 }
 
 @media only screen and (max-width: 800px) {

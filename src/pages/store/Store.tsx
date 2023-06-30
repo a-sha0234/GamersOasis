@@ -8,7 +8,7 @@ import Navbar from "../../components/navbar/Navbar";
 
 export default function Store() {
   return (
-    <main>
+    <main className={styles.top__container}>
       <Navbar />
       <div className={styles.container}>
         {/* <h1>Trending</h1> */}

@@ -43,7 +43,7 @@ export default function Navbar() {
         <div className={styles.left}>
           <li className={styles.gameStore}>
             {gameStore && (
-              <Link to="/">
+              <Link to="/" style={{ color: "white" }}>
                 <BsController />
                 Game Store
               </Link>
@@ -51,7 +51,7 @@ export default function Navbar() {
           </li>
           <li className={styles.browseStore}>
             {!gameStore && (
-              <Link to="/store">
+              <Link to="/store" style={{ color: "white" }}>
                 {" "}
                 <BsCart3 /> Browse Store
               </Link>
@@ -62,7 +62,7 @@ export default function Navbar() {
         <div className={styles.right}>
           {" "}
           <li className={styles.githubLink}>
-            <a href="#">
+            <a href="#" style={{ color: "white" }}>
               <FiGithub />
               a-sha0234
             </a>

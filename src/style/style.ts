@@ -15,13 +15,22 @@ const SFilter = styled.button`
   cursor: pointer;
   display: flex;
   align-items: center;
+  background-color: #111111;
+  color: white;
+  border-radius: 5px;
+  &:hover {
+    background-color: #3c3c3c;
+  }
 `;
 
 const Sicon = styled.span`
-  background-color: blue;
   border-radius: 20%;
   margin-right: 2%;
   padding: 2%;
+
+  &:hover {
+    background-color: #3c3c3c;
+  }
 `;
 
 const Sheading = styled.h1<Shead>`
@@ -30,6 +39,7 @@ const Sheading = styled.h1<Shead>`
 
 const SfilterHeading = styled.h2`
   margin: 2%;
+  color: white;
 `;
 
 const Slink = styled.a`

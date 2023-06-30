@@ -31,14 +31,12 @@ const Sprice = styled.p`
 const CartItem: React.FC<Props> = ({ data }) => {
   const dispatch = useDispatch();
   function removeItem(e: any) {
-    console.log("id from cratitem " + e.target.id);
-    dispatch(removeCart(e.target.id));
+    dispatch(removeCart(e.currentTarget.id));
   }
 
   return (
     <div className={styles.cartItem}>
       <Stitle>{data.title} </Stitle>
-
       <Sprice>£{data.price}</Sprice>
       <div className={styles.right__container}>
         <Sbutton id={data.id} onClick={removeItem}>

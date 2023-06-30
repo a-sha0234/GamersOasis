@@ -7,9 +7,12 @@ import styled from "styled-components";
 
 const Searchbar = styled.input`
   font-size: 1.2rem;
-  padding: 5px;
+  padding: 6px;
   width: 190%;
-
+  background-color: #3c3c3c;
+  border: none;
+  color: white;
+  border-radius: 5px;
   @media screen and (max-width: 779px) {
     width: 100%;
   }

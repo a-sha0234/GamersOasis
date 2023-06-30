@@ -9,6 +9,16 @@ import { Sheading } from "../../style/style";
 import styles from "./gamegrid.module.css";
 import { BsGrid3X2 } from "react-icons/bs";
 import { MdOutlineTableRows } from "react-icons/md";
+import styled from "styled-components";
+
+const SfilterButton = styled.button`
+  background-color: #3c3c3c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+`;
 
 export default function GameGrid() {
   const { data, error, isLoading } = useGetAllGamesQuery({});
@@ -86,22 +96,26 @@ export default function GameGrid() {
 
   return (
     <main className={styles.container}>
-      <Sheading fontSize={"4rem"}>Trending and Intresting </Sheading>
-      <p>Based on player count</p>
+      <Sheading fontSize={"4rem"} style={{ color: "white" }}>
+        Trending and Intresting{" "}
+      </Sheading>
+      <p style={{ color: "white" }}>Based on player count</p>
       <div className={styles.display}>
         <article className={styles.display__filter}>
-          <button>Filter by: {currentFilter}</button>
-          <button onClick={clearfilter}>Clear Filter</button>
+          <SfilterButton>
+            Filter by: <p style={{ fontWeight: "bold" }}>{currentFilter}</p>
+          </SfilterButton>
+          <SfilterButton onClick={clearfilter}>Clear Filter</SfilterButton>
         </article>
         <article className={styles.display__options}>
-          <p>Display options:</p>
-          <button onClick={displayGrid}>
+          <p style={{ color: "white" }}>Display options:</p>
+          <SfilterButton onClick={displayGrid}>
             <BsGrid3X2 fontSize={40} />
             {/* grid */}
-          </button>
-          <button onClick={displayColumn}>
+          </SfilterButton>
+          <SfilterButton onClick={displayColumn}>
             <MdOutlineTableRows fontSize={40} />
-          </button>
+          </SfilterButton>
         </article>
       </div>
       <div
