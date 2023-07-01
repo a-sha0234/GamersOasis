@@ -6,6 +6,7 @@ const Container = styled.div`
   margin: 3%;
   background-color: rgba(255, 255, 255, 0.5);
   padding: 5%;
+  border-radius: 10px;
 `;
 
 const Heading = styled.h1`

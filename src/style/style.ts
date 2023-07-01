@@ -45,8 +45,10 @@ const SfilterHeading = styled.h2`
 const Slink = styled.a`
   margin: 2%;
   padding: 1%;
-  background-color: red;
+  font-weight: bold;
   width: 80%;
   text-align: center;
+  background-color: #f9f6ee;
+  border-radius: 10px;
 `;
 export { Button, SFilter, Sicon, Sheading, SfilterHeading, Slink };

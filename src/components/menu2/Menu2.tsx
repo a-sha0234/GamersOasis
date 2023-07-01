@@ -16,6 +16,7 @@ const SContainer = styled.main`
 
 const Scomponent = styled.div`
   background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
 `;
 
 const Sheading = styled.h1`

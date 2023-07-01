@@ -8,6 +8,7 @@ const Container = styled.div`
   background-color: rgba(255, 255, 255, 0.5);
   margin: 3%;
   justify-content: center;
+  border-radius: 10px;
 `;
 
 export default function Menu1() {
