@@ -1,12 +1,12 @@
-.image img {
-  border-top-left-radius: 10%;
-  border-top-right-radius: 10%;
-}
+/* .image img {
+  border-radius: 5px;
+} */
 
 .card {
   background-color: #3c3c3c;
   /* margin-right: 10%; */
   width: 350px;
+  border-radius: 5px;
 }
 
 .card__top {
@@ -17,6 +17,8 @@
 
 .card__title {
   margin: 3%;
+  color: white;
+  font-weight: bolder;
 }
 
 .card__bottom {
@@ -26,6 +28,17 @@
 }
 
 .card__bottom button {
+}
+
+.wishlist {
+  background-color: #3c3c3c;
+  border: none;
+  cursor: pointer;
+}
+
+.price {
+  color: white;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 800px) {

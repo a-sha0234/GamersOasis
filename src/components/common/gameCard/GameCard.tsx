@@ -8,6 +8,7 @@ import Carousel from "../../ImageCarousel/Carousel";
 import styles from "./gamecard.module.css";
 import styled from "styled-components";
 import { AiOutlinePlus } from "react-icons/ai";
+import { TiTick } from "react-icons/ti";
 
 interface Props {
   data: any;
@@ -22,11 +23,26 @@ const ScoverImg = styled.div<coverImg>`
   background-size: cover;
   height: 250px;
   width: 100%;
+  border-radius: 5px;
+`;
+
+const Scart = styled.button`
+  background-color: #3c3c3c;
+  border: none;
+  display: flex;
+  align-items: center;
+  color: lightgrey;
+  font-size: 1rem;
+  cursor: pointer;
+  &:hover {
+    color: #ff00ff;
+  }
 `;
 
 const GameCard: React.FC<Props> = ({ data }) => {
   const dispatch = useDispatch();
   const [wishlist, setWishList] = useState(false);
+  const [isAdded, setIsAdded] = useState<boolean>(false);
 
   // const hello = useSelector(selectWishList);
   let o = useSelector(selectCart);
@@ -45,9 +61,12 @@ const GameCard: React.FC<Props> = ({ data }) => {
 
   function addToCart(e: any) {
     dispatch(addCart(data));
-    // dispatch(addCart(data));
     console.log(o);
     e.preventDefault();
+    setIsAdded(true);
+    setInterval(() => {
+      setIsAdded(false);
+    }, 3000);
   }
 
   console.log(data);
@@ -57,16 +76,29 @@ const GameCard: React.FC<Props> = ({ data }) => {
         <div className={data.id}>
           <ScoverImg cover={data.cover}></ScoverImg>
           <article className={styles.card__top}>
-            <button onClick={addToCart}>
-              Add to cart <AiOutlinePlus />
-            </button>
-            <p>£{data.price}</p>
+            <Scart onClick={addToCart}>
+              {isAdded ? (
+                <span
+                  style={{
+                    color: "limegreen",
+                  }}
+                >
+                  Addded <TiTick color="limegreen" />
+                </span>
+              ) : (
+                <span>
+                  {" "}
+                  Add to cart <AiOutlinePlus />
+                </span>
+              )}
+            </Scart>
+            <p className={styles.price}>£{data.price}</p>
           </article>
           <p className={styles.card__title}>{data.title}</p>
           <article className={styles.card__bottom}>
-            <button onClick={wishlistChange}>
+            <button onClick={wishlistChange} className={styles.wishlist}>
               <AiFillHeart
-                color={wishlist == false ? "black" : "red"}
+                color={wishlist == false ? "white" : "red"}
                 fontSize={25}
               />
             </button>

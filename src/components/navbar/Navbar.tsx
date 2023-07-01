@@ -7,7 +7,7 @@ import styles from "./navbar.module.css";
 import { useSelector } from "react-redux";
 import { selectCart } from "../../redux/cart";
 import { FiGithub } from "react-icons/fi";
-import { BsBag } from "react-icons/bs";
+import { BsBag, BsFillBagFill } from "react-icons/bs";
 import { BsController, BsCart3 } from "react-icons/bs";
 
 export default function Navbar() {
@@ -69,7 +69,11 @@ export default function Navbar() {
           </li>{" "}
           <li>
             <button onClick={sideBar} className="Cart">
-              <BsBag />
+              {useSelector(selectCart).length ? (
+                <BsFillBagFill color="limegreen" />
+              ) : (
+                <BsBag />
+              )}
               {`Cart ${useSelector(selectCart).length}`}
             </button>
           </li>
