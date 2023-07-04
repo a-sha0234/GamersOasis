@@ -59,7 +59,7 @@ export default function GamePage() {
       <div className={styles.gamepage__top}>
         <Link to="/store">
           <button className={styles.store__button}>
-            <BsArrowLeftShort />
+            <BsArrowLeftShort size="40" />
             store
           </button>
         </Link>
@@ -118,7 +118,7 @@ export default function GamePage() {
         {loadingGame == false && (
           <>
             <p>£{game[0].price}</p>
-            <button onClick={addToCart}>
+            <button onClick={addToCart} className={styles.cart__btn}>
               Add to cart <AiOutlinePlus />
             </button>
           </>
