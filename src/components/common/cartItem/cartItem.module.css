@@ -1,10 +1,11 @@
 .cartItem {
-  background-color: blue;
+  background-color: #111111;
   display: flex;
   padding: 6%;
   width: 75%;
   margin-bottom: 5%;
   margin-top: 4%;
+  border-radius: 10px;
 }
 
 .right__container {
@@ -12,4 +13,9 @@
   flex-direction: column;
   position: relative;
   margin-left: auto;
+}
+
+.top {
+  display: flex;
+  align-items: center;
 }

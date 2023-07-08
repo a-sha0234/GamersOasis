@@ -24,6 +24,11 @@ const ScartContainser = styled.div`
   justify-content: center;
 `;
 
+const Sgames = styled.h2`
+  color: white;
+  font-weight: bold;
+`;
+
 export default function CartSidebar() {
   const dispatch = useDispatch();
   const Cart = useSelector(selectCart);
@@ -72,8 +77,10 @@ export default function CartSidebar() {
   return (
     <main className={styles.cart}>
       <Scontainer2>
-        <h2>{Cart.length} games</h2>
-        <button onClick={clear}>Clear</button>
+        <Sgames>{Cart.length} games</Sgames>
+        <button onClick={clear} className={styles.clear}>
+          Clear
+        </button>
       </Scontainer2>
       <article className={styles.games}>
         {Cart.map((data: any) => {
