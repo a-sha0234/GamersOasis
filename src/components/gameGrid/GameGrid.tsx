@@ -10,6 +10,7 @@ import styles from "./gamegrid.module.css";
 import { BsGrid3X2 } from "react-icons/bs";
 import { MdOutlineTableRows } from "react-icons/md";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const SfilterButton = styled.button`
   background-color: #3c3c3c;
@@ -127,7 +128,13 @@ export default function GameGrid() {
           FilteredData.map((data: any) => {
             return (
               <div className={styles.container__card}>
-                <GameCard data={data} />
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  onHoverStart={(e) => {}}
+                  onHoverEnd={(e) => {}}
+                >
+                  <GameCard data={data} />
+                </motion.div>
               </div>
             );
           })}

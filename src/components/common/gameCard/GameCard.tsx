@@ -9,6 +9,7 @@ import styles from "./gamecard.module.css";
 import styled from "styled-components";
 import { AiOutlinePlus } from "react-icons/ai";
 import { TiTick } from "react-icons/ti";
+import { motion } from "framer-motion";
 
 interface Props {
   data: any;
