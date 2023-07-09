@@ -4,6 +4,7 @@ import { searchQuery, selectSearchQuery } from "../../redux/searchbar";
 import { useSelector, useDispatch } from "react-redux";
 import styles from "./searchbar.module.css";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const Searchbar = styled.input`
   font-size: 1.2rem;
@@ -28,14 +29,20 @@ export default function SearchBar() {
 
   return (
     <>
-      <Searchbar
-        type="text"
-        placeholder="search games..."
-        value={searchQueryValue}
-        onChange={handleSearch}
-        // className={styles.searchbar}
-        // size={50}
-      />
+      <motion.div
+        whileHover={{ scale: 1.02 }}
+        onHoverStart={(e) => {}}
+        onHoverEnd={(e) => {}}
+      >
+        <Searchbar
+          type="text"
+          placeholder="search games..."
+          value={searchQueryValue}
+          onChange={handleSearch}
+          // className={styles.searchbar}
+          // size={50}
+        />
+      </motion.div>
     </>
   );
 }

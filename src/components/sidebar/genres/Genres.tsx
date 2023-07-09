@@ -15,6 +15,7 @@ import {
   GiMountainRoad,
 } from "react-icons/gi";
 import { BiFootball } from "react-icons/bi";
+import { motion } from "framer-motion";
 
 export default function Genres() {
   const dispatch = useDispatch();
@@ -40,12 +41,14 @@ export default function Genres() {
     <Smain>
       <Scontainer>
         <SfilterHeading>Genres</SfilterHeading>
+
         <SFilter id="action" onClick={(e) => filterHelper(e, dispatch)}>
           <Sicon>
             <RiBoxingFill color="white" fontSize={30} />
           </Sicon>{" "}
           Action
         </SFilter>
+
         <SFilter id="Strategy" onClick={(e) => filterHelper(e, dispatch)}>
           <Sicon>
             <GiChessKnight color="white" fontSize={30} />
