@@ -8,6 +8,7 @@ import CartSidebar from "./components/cartSidebar/CartSidebar";
 import { useSelector } from "react-redux";
 import { selectSidebar } from "../src/redux/cartSidebar";
 import "../src/style/global.css";
+import { AnimatePresence, motion } from "framer-motion";
 
 function App() {
   const isSidebar = useSelector(selectSidebar);
@@ -15,14 +16,16 @@ function App() {
   return (
     <div className="App">
       {" "}
-      <BrowserRouter>
-        {/* <Navbar />{" "} */}
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/store" element={<Store />}></Route>
-          <Route path="/store/:id" element={<GamePage />}></Route>
-        </Routes>
-      </BrowserRouter>
+      <AnimatePresence>
+        <BrowserRouter>
+          {/* <Navbar />{" "} */}
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/store" element={<Store />}></Route>
+            <Route path="/store/:id" element={<GamePage />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </AnimatePresence>
       {isSidebar && <CartSidebar />}
     </div>
   );

@@ -106,16 +106,24 @@ export default function GameGrid() {
           <SfilterButton>
             Filter by: <p style={{ fontWeight: "bold" }}>{currentFilter}</p>
           </SfilterButton>
-          <SfilterButton onClick={clearfilter}>Clear Filter</SfilterButton>
+
+          <SfilterButton onClick={clearfilter}>
+            <motion.div whileHover={{ scale: 1.03 }}>Clear Filter</motion.div>
+          </SfilterButton>
         </article>
         <article className={styles.display__options}>
           <p style={{ color: "white" }}>Display options:</p>
+
           <SfilterButton onClick={displayGrid}>
-            <BsGrid3X2 fontSize={40} />
-            {/* grid */}
+            <motion.div whileHover={{ scale: 1.03 }}>
+              <BsGrid3X2 fontSize={40} />
+              {/* grid */}
+            </motion.div>
           </SfilterButton>
           <SfilterButton onClick={displayColumn}>
-            <MdOutlineTableRows fontSize={40} />
+            <motion.div whileHover={{ scale: 1.03 }}>
+              <MdOutlineTableRows fontSize={40} />
+            </motion.div>
           </SfilterButton>
         </article>
       </div>
@@ -128,11 +136,7 @@ export default function GameGrid() {
           FilteredData.map((data: any) => {
             return (
               <div className={styles.container__card}>
-                <motion.div
-                  whileHover={{ scale: 1.03 }}
-                  onHoverStart={(e) => {}}
-                  onHoverEnd={(e) => {}}
-                >
+                <motion.div whileHover={{ scale: 1.03 }}>
                   <GameCard data={data} />
                 </motion.div>
               </div>

@@ -9,6 +9,7 @@ import { selectCart } from "../../redux/cart";
 import { FiGithub } from "react-icons/fi";
 import { BsBag, BsFillBagFill } from "react-icons/bs";
 import { BsController, BsCart3 } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const dispatch = useDispatch();
@@ -41,41 +42,66 @@ export default function Navbar() {
     <nav>
       <ul className={styles.navbar}>
         <div className={styles.left}>
-          <li className={styles.gameStore}>
-            {gameStore && (
-              <Link to="/" style={{ color: "white" }}>
-                <BsController />
-                Game Store
-              </Link>
-            )}
-          </li>
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            onHoverStart={(e) => {}}
+            onHoverEnd={(e) => {}}
+          >
+            <li className={styles.gameStore}>
+              {gameStore && (
+                <Link to="/" style={{ color: "white" }}>
+                  <BsController />
+                  Game Store
+                </Link>
+              )}
+            </li>
+          </motion.div>
+
           <li className={styles.browseStore}>
-            {!gameStore && (
-              <Link to="/store" style={{ color: "white" }}>
-                {" "}
-                <BsCart3 /> Browse Store
-              </Link>
-            )}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              onHoverStart={(e) => {}}
+              onHoverEnd={(e) => {}}
+            >
+              {!gameStore && (
+                <Link to="/store" style={{ color: "white" }}>
+                  {" "}
+                  <BsCart3 /> Browse Store
+                </Link>
+              )}
+            </motion.div>
           </li>
           <li className={styles.SearchBar}>{searchBar && <SearchBar />}</li>
         </div>
         <div className={styles.right}>
           {" "}
           <li className={styles.githubLink}>
-            <a href="https://github.com/a-sha0234" style={{ color: "white" }}>
-              <FiGithub />
-              a-sha0234
-            </a>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              onHoverStart={(e) => {}}
+              onHoverEnd={(e) => {}}
+            >
+              <a href="https://github.com/a-sha0234" style={{ color: "white" }}>
+                <FiGithub />
+                a-sha0234
+              </a>
+            </motion.div>
           </li>{" "}
           <li>
-            <button onClick={sideBar} className="Cart">
-              {useSelector(selectCart).length ? (
-                <BsFillBagFill color="limegreen" />
-              ) : (
-                <BsBag />
-              )}
-              {`Cart ${useSelector(selectCart).length}`}
-            </button>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              onHoverStart={(e) => {}}
+              onHoverEnd={(e) => {}}
+            >
+              <button onClick={sideBar} className="Cart">
+                {useSelector(selectCart).length ? (
+                  <BsFillBagFill color="limegreen" />
+                ) : (
+                  <BsBag />
+                )}
+                {`Cart ${useSelector(selectCart).length}`}
+              </button>
+            </motion.div>
           </li>
         </div>
       </ul>

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Button, Slink } from "../../style/style";
+import { motion } from "framer-motion";
 
 const SContainer = styled.main`
   display: flex;
@@ -29,19 +30,50 @@ export default function Menu2() {
       <Sheading>Quick Navigation</Sheading>
       <SContainer>
         <Slink href="https://github.com/a-sha0234/GamersOasis">
-          Performance
+          <motion.div
+            whileHover={{ scale: 1.03 }}
+            onHoverStart={(e) => {}}
+            onHoverEnd={(e) => {}}
+          >
+            Performance
+          </motion.div>
         </Slink>
+
         <Slink href="https://github.com/a-sha0234/GamersOasis">
-          Technolgies
+          <motion.div
+            whileHover={{ scale: 1.03 }}
+            onHoverStart={(e) => {}}
+            onHoverEnd={(e) => {}}
+          >
+            Technolgies
+          </motion.div>
         </Slink>
         <Slink href="https://github.com/a-sha0234/GamersOasis/graphs/commit-activity">
-          Commit Log
+          <motion.div
+            whileHover={{ scale: 1.03 }}
+            onHoverStart={(e) => {}}
+            onHoverEnd={(e) => {}}
+          >
+            Commit Log
+          </motion.div>
         </Slink>
         <Slink href="https://github.com/a-sha0234/GamersOasis">
-          Front-End{" "}
+          <motion.div
+            whileHover={{ scale: 1.03 }}
+            onHoverStart={(e) => {}}
+            onHoverEnd={(e) => {}}
+          >
+            Front-End{" "}
+          </motion.div>
         </Slink>
         <Slink href="https://github.com/a-sha0234/GamersOasis-server">
-          Back-End{" "}
+          <motion.div
+            whileHover={{ scale: 1.03 }}
+            onHoverStart={(e) => {}}
+            onHoverEnd={(e) => {}}
+          >
+            Back-End{" "}
+          </motion.div>
         </Slink>
       </SContainer>
     </Scomponent>

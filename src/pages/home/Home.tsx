@@ -7,7 +7,7 @@ import MainPanel from "../../components/mainMenu/MainPanel";
 import Menu1 from "../../components/menu1/Menu1";
 import Menu2 from "../../components/menu2/Menu2";
 import Navbar from "../../components/navbar/Navbar";
-// import videoBackground from "../../../public/background1.mp4";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (

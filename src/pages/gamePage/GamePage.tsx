@@ -16,6 +16,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { AiOutlinePlus } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 const Sdescritpion = styled.p`
   margin-top: 5%;
@@ -79,20 +80,24 @@ export default function GamePage() {
             {/*  */}
             {showMore && !loadingGame && (
               <div>
-                <a href={game[0].link}>{game[0].title} Website </a>
-                <p>Release: {game[0].release_date}</p>
-                <p>Main Genre: {game[0].genre}</p>
-                <p>Dvelopers:{game[0].developers} </p>
-                <p>Publishers: {game[0].publishers}</p>
+                <motion.div animate={{ x: 2 }} transition={{ delay: 0.5 }}>
+                  <a href={game[0].link}>{game[0].title} Website </a>
+                  <p>Release: {game[0].release_date}</p>
+                  <p>Main Genre: {game[0].genre}</p>
+                  <p>Dvelopers:{game[0].developers} </p>
+                  <p>Publishers: {game[0].publishers}</p>
+                </motion.div>
               </div>
             )}
 
             {showMore === true && loadingPlatform === false ? (
               <div style={{ display: "inline" }}>
-                <span>Platforms:</span>
-                {platform.map((data: any, index: number) => (
-                  <span key={index}>{data.plaforms}</span>
-                ))}
+                <motion.div animate={{ x: 4 }} transition={{ delay: 0.5 }}>
+                  <span>Platforms:</span>
+                  {platform.map((data: any, index: number) => (
+                    <span key={index}>{data.plaforms}</span>
+                  ))}
+                </motion.div>
               </div>
             ) : (
               <></>
